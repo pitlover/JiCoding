@@ -1,4 +1,4 @@
 # Programmers
 ## 2022.05
-### 2022.05.30  [x]
+### - [x] 2022.05.30
 Language : Python
