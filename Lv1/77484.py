@@ -6,7 +6,6 @@ def cal(n):
         return 7 - n
     return 6
 
-
 def solution(lottos, win_nums):
     incorrect = []
     correct = []
