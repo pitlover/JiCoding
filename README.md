@@ -1,3 +1,4 @@
-# Programmers
-## 2022.05.30 ~ 
-Language : Python
+# Programmers (Python3)
+## 2022.05
+ :dart: 2022.05.30
+
