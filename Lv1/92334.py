@@ -36,4 +36,5 @@ def solution(id_list, report, k):
     answer = []
     for a in final.values():
         answer.append(a)
+
     return answer
