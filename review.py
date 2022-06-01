@@ -24,3 +24,14 @@ print(dict.fromkeys(seq, 10)) # {'age':None, 'name':None, 'sex':None}
 
 # 리스트 갯수 세기
 print(a.count(3))
+
+
+## 문자열을 해당 진법으로 바꾸기
+tmp = "12"
+print(int(tmp, 3))
+
+# dict key 기준으로 sort
+result = {5:100, 2:1000, 10:3, 8:0}
+final = sorted(result.items())
+# dict value 기준으로 sort
+final = dict(sorted(result.items(), key= lambda x:x[1], reverse = True))
