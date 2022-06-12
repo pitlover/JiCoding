@@ -67,3 +67,9 @@ def max_index(li):
     return max(range(len(li)), key=li.__getitem__)
 >>> min_index(li) # 0
 >>> max_index(li) # 3
+
+# eval
+myStr = '{name: "webisfree", domain: "dotcom"}'
+myDict = eval(myStr)
+
+print myStr['name'] # "webisfree"
