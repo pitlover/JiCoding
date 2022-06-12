@@ -86,5 +86,10 @@ a.issubset(b) # 부분집합 확인
 a.issuperset(b) # 슈퍼집합 확인
 a.isdisjoint(b) # 교집합 있는지 확인
 
-
+# bytearray : string 위치로 변경하기 
+s = 'Naze'
+b = bytearray(s)
+b[2] = 'm'
+s = str(b)
+print(s)
 
