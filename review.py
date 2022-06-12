@@ -7,6 +7,8 @@ import re
 text = "I like apble And abple"
 text_mod = re.sub('apble|abple', "apple", text) # "I like apple And apple"
 
+## dict 값 가져오기
+sample.get(a, 0) # sample의 a가져오기 없으면 0
 
 ## 리스트 여러개 있을 때 중복 제거
 a = [4, 2, 3, 1, 3, 2,2, 1, 6]
@@ -38,3 +40,12 @@ final = dict(sorted(result.items(), key= lambda x:x[1], reverse = True))
 
 # gcd 
 from math import gcd
+
+# combinations, permutations
+from itertools import permutations, combinations
+
+from collections import Counter
+
+# tuple sort
+temp = (5, 1, 2, 3, 4, 1)
+sort_temp = tuple(sort(temped, key=lambda x:x))
