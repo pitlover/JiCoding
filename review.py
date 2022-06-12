@@ -35,3 +35,6 @@ result = {5:100, 2:1000, 10:3, 8:0}
 final = sorted(result.items())
 # dict value 기준으로 sort
 final = dict(sorted(result.items(), key= lambda x:x[1], reverse = True))
+
+# gcd 
+from math import gcd
