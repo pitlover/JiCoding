@@ -68,7 +68,7 @@ def max_index(li):
 >>> min_index(li) # 0
 >>> max_index(li) # 3
 
-# eval
+# eval : string -> dict, list
 myStr = '{name: "webisfree", domain: "dotcom"}'
 myDict = eval(myStr)
 
