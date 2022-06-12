@@ -73,3 +73,18 @@ myStr = '{name: "webisfree", domain: "dotcom"}'
 myDict = eval(myStr)
 
 print myStr['name'] # "webisfree"
+
+# set
+a = {1, 2, 3}
+b = {2, 3, 4}
+a.add(4) # {1, 2, 3, 4}
+a.difference(b) # {1}
+a.union(b) # {1, 2, 3, 4}
+a.intersection(b) # {2, 3}
+a.symmetric_difference(b) # 대칭차집합 {1, 4}
+a.issubset(b) # 부분집합 확인
+a.issuperset(b) # 슈퍼집합 확인
+a.isdisjoint(b) # 교집합 있는지 확인
+
+
+
