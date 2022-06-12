@@ -55,3 +55,15 @@ from collections import Counter
 # tuple sort
 temp = (5, 1, 2, 3, 4, 1)
 sort_temp = tuple(sort(temped, key=lambda x:x))
+
+# min, max 값의 index 
+li = [10,20,30,40]
+
+# 가장 작은 값의 index
+def min_index(li):
+    return min(range(len(li)), key=li.__getitem__)
+# 가장 큰 값의 index
+def max_index(li):
+    return max(range(len(li)), key=li.__getitem__)
+>>> min_index(li) # 0
+>>> max_index(li) # 3
