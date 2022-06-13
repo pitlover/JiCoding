@@ -93,3 +93,14 @@ b[2] = 'm'
 s = str(b)
 print(s)
 
+# deque
+from collections import deque
+a = [1, 2, 3, 4, 5]
+q = deque(a)
+q.rotate(2) # 시계방향 양수, 그 반대 음수
+result = list(q)    # [4, 5, 1, 2, 3] 
+q.append(6)     # [1, 2, 3, 4, 5, 6]
+q.appendleft(0) # [0, 1, 2, 3, 4, 5, 6]
+q.pop()     # 6
+q.popleft() # 0
+
