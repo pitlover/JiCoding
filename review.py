@@ -2,10 +2,17 @@ from itertools import combinations, permutations
 
 ## re 정규식 사용하기
 ## re.sub(정규 표현식, 대상 문자열, 치환문자) -> 정규식 공부하기!
-
+# https://wikidocs.net/4308
+# findall, finditer
 import re
 text = "I like apble And abple"
 text_mod = re.sub('apble|abple', "apple", text) # "I like apple And apple"
+
+s = "park 010-9999-9988\nkim 010-9909-7789\nlee 010-8789-7768"
+p = re.compile('(\w*\s\d{3}[-]\d{4}[-])\d{4}')
+print(p.findall(s))
+
+s = re.sub('(\w*\s\d{3}[-]\d{4}[-])\d{4}', '\g<1>****', s)
 
 ## dict 값 가져오기
 sample.get(a, 0) # sample의 a가져오기 없으면 0
@@ -31,20 +38,26 @@ print(a.count(3))
 tmp = "12"
 print(int(tmp, 3))
 
-# dict key 기준으로 sort
+# list a.sort() vs sorted(a) 중 .sort 가 더 빠름
+
+# dict key 기준으로 sort기
 result = {5:100, 2:1000, 10:3, 8:0}
 final = sorted(result.items())
 # dict value 기준으로 sort
 final = dict(sorted(result.items(), key= lambda x:x[1], reverse = True))
 
-# 값으로 정렬하기 - 1 
->>> dic = {'a': 4, 'b':3, 'c':2, 'd':1} 
+# 리스트 갯수 세기
+list_ = [1, 2, 1, 1, 2, 5, 6, 6]
+print(list_.count(2)) # 2
+
+# 값으로 정렬하기 - 1
+>>> dic = {'a': 4, 'b':3, 'c':2, 'd':1}
 print(sorted(dic))            # ['a', 'b', 'c', 'd']
 print(sorted(dic.items()))    # [('a', 4), ('b', 3), ('c', 2), ('d', 1)]
 print(sorted(dic.items(), key=lambda x:x[1]))     # [('d', 1), ('c', 2), ('b', 3), ('a', 4)]
 print(sorted(result.items(), key= lambda x:x[1], reverse = True))   # [('a', 4), ('b', 3), ('c', 2), ('d', 1)]
 
-# gcd 
+# gcd
 from math import gcd
 
 # combinations, permutations
@@ -54,9 +67,9 @@ from collections import Counter
 
 # tuple sort
 temp = (5, 1, 2, 3, 4, 1)
-sort_temp = tuple(sort(temped, key=lambda x:x))
+sort_temp = tuple(sorted(temp, key=lambda x:x))
 
-# min, max 값의 index 
+# min, max 값의 index
 li = [10,20,30,40]
 
 # 가장 작은 값의 index
@@ -86,7 +99,7 @@ a.issubset(b) # 부분집합 확인
 a.issuperset(b) # 슈퍼집합 확인
 a.isdisjoint(b) # 교집합 있는지 확인
 
-# bytearray : string 위치로 변경하기 
+# bytearray : string 위치로 변경하기
 s = 'Naze'
 b = bytearray(s)
 b[2] = 'm'
@@ -98,9 +111,10 @@ from collections import deque
 a = [1, 2, 3, 4, 5]
 q = deque(a)
 q.rotate(2) # 시계방향 양수, 그 반대 음수
-result = list(q)    # [4, 5, 1, 2, 3] 
+result = list(q)    # [4, 5, 1, 2, 3]
 q.append(6)     # [1, 2, 3, 4, 5, 6]
 q.appendleft(0) # [0, 1, 2, 3, 4, 5, 6]
 q.pop()     # 6
 q.popleft() # 0
-
+#seek
+q[0]
