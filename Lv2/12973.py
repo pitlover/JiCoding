@@ -3,6 +3,7 @@
 
 from collections import deque
 
+
 def solution(s):
     s = list(s)
     queue = deque()
