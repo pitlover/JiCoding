@@ -1,3 +1,6 @@
+# 최솟값 만들기
+# Success
+
 def solution(A,B):
     A.sort()
     B.sort(reverse= True)
