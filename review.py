@@ -128,4 +128,8 @@ def solution(n):
         if i in num:
             num-=set(range(2*i,n+1,i))
     return len(num)
-
+# 사전식 정렬
+# 1 ) 길이로 먼저 정렬 2) 같은 길이는 사전식 앞이 먼저 오게!
+# ex) ['aaaa', 'aaa', 'aa', 'a', 'b', 'bb', 'bbb'] -> ['a', 'aa', 'aaa', 'aaaa', 'b', 'bb', 'bbb'] -> ['a', 'b', 'aa', 'bb', 'aaa', 'bbb', 'aaaa'] 
+words.sort()  
+words.sort(key = lambda x : len(x))
