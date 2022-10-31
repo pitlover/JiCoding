@@ -31,6 +31,7 @@ mov = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 day = -1
 while queue:
     x, y = queue.popleft()
+
     if visited[x][y] == False:
         visited[x][y] = True
         tomato += 1

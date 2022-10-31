@@ -13,9 +13,7 @@ def dfs(matrix, N):
     result = 0
     mov = [(-1, 0), (1, 0), (0, 1), (0, -1)]
     visited = [[False] * N for _ in range(N)]
-    # for a in matrix:
-    #     print(a)
-    # print("*" * 10)
+
     queue = deque()
     for i in range(N):
         for j in range(N):
@@ -30,14 +28,8 @@ def dfs(matrix, N):
                         for a, b in mov:
                             nxt_x, nxt_y = x + a, y + b
                             if 0 <= nxt_x < N and 0 <= nxt_y < N and matrix[nxt_x][nxt_y] == 1 and not visited[nxt_x][nxt_y]:
-                                # print(f"cur : {x},{y}, nxt : {nxt_x},{nxt_y}")
                                 queue.append([nxt_x, nxt_y])
                                 matrix[nxt_x][nxt_y] = matrix[x][y] + 1
-                        # for a in matrix:
-                        #     print(a)
-                        # print("*" * 10)
-
-    # print(result)
     return result
 
 
