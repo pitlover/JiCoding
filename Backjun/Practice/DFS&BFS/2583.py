@@ -15,7 +15,7 @@ for a in range(K):
     for i in range(b_y - a_y):
         for j in range(b_x - a_x):
             matrix[start_x + i][start_y + j] = 0
-
+ 
 from collections import deque
 
 mov = [(1, 0), (-1, 0), (0, 1), (0, -1)]
