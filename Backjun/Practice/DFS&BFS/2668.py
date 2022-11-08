@@ -13,28 +13,40 @@ up = [_ for _ in range(1, N + 1)]
 down = []
 for _ in range(N):
     down.append(int(input()))
-print(up, down)
+# print(up, down)
 matrix = [[] for _ in range(N + 1)]
 for a in range(N):
     matrix[a + 1].append(down[a])
-print(matrix)
+# print(matrix)
+
+visited = [False] * (N + 1)
+result_list = set()
 
 
-def dfs(node, link):
-    if not visited[node]:
-        visited[node] = True
-        if link != [] and node in link:
-            return "hello"
+def dfs(node, history):
+    for i in matrix[node]:
+        if i in history:
+            global result
+            result_list.add(i)
+            return
 
-        for a in matrix[node]:
-            link.append(a)
-            dfs(a, link)
+        if not visited[i]:
+            visited[i] = True
+            history.append(node)
+            dfs(i, history)
+            history.remove(node)
+            visited[i] = False
 
 
-for i in range(1, N + 1):
-    visited = [False] * (N + 1)
-    dfs(i, [])
+for a in range(1, N + 1):
+    visited[a] = True
+    dfs(a, [a])
+    visited[a] = False
+result_list = sorted(result_list)
+print(len(result_list))
 
+for _ in result_list:
+    print(_)
 ## 맞는데 시간초과 걸림... ㅠㅠ -> 완전탐색이 아닌 듯..
 '''
 N = int(input())
