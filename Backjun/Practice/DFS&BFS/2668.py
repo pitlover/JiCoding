@@ -26,7 +26,7 @@ result_list = set()
 def dfs(node, history):
     for i in matrix[node]:
         if i in history:
-            global result
+            global result_list
             result_list.add(i)
             return
 
@@ -47,6 +47,7 @@ print(len(result_list))
 
 for _ in result_list:
     print(_)
+
 ## 맞는데 시간초과 걸림... ㅠㅠ -> 완전탐색이 아닌 듯..
 '''
 N = int(input())
