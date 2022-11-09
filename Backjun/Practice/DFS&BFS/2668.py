@@ -25,7 +25,7 @@ result_list = set()
 
 def dfs(node, history):
     for i in matrix[node]:
-        if i in history:
+        if i in history: 
             global result_list
             result_list.add(i)
             return
