@@ -7,7 +7,7 @@ mov = [-1, 1, 2]
 
 from collections import deque
 
-queue = deque()
+queue = deque() 
 queue.append(N)
 
 floor = [0] * 100001
