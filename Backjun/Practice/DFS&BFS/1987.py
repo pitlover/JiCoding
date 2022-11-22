@@ -12,7 +12,7 @@ for a in range(N):
 
 mov = [(0, 1), (0, -1), (1, 0), (-1, 0)]
 result = 1
-path = {matrix[0][0]: True}
+path = set()
 
 
 def dfs(x, y, count):
@@ -21,12 +21,12 @@ def dfs(x, y, count):
 
     for i, j in mov:
         nxt_x, nxt_y = x + i, y + j
-        if 0 <= nxt_x < N and 0 <= nxt_y < M and path.get(matrix[nxt_x][nxt_y], False) is False:
-            path[matrix[nxt_x][nxt_y]] = True
+        if 0 <= nxt_x < N and 0 <= nxt_y < M and not matrix[nxt_x][nxt_y] in path:
+            path.add(matrix[nxt_x][nxt_y])
             dfs(nxt_x, nxt_y, count + 1)
-            path[matrix[nxt_x][nxt_y]] = False
+            path.remove(matrix[nxt_x][nxt_y])
 
-
+path.add(matrix[0][0])
 dfs(0, 0, 1)
 
 print(result)
