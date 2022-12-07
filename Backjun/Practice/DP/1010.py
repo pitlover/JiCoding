@@ -25,7 +25,5 @@ for _ in result:
 
 '''
 nCk = n-1Ck + n-1Ck-1
-dp[n][k] = dp[n-1][k] + dp[n-1][k-1]
-
-
+dp[n][k] = dp[n-1][k] + dp[n-1][k-1] 
 '''
