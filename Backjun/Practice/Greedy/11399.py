@@ -9,3 +9,4 @@ result = 0
 for a in range(N):
     result += (N -a) * P[a]
 print(result)
+ 
