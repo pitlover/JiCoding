@@ -10,4 +10,4 @@ for i in range(n):
         if num[i] > num[j]:
             dp[i] = max(dp[i], num[i] + dp[j])
 
-print(max(dp))
+print(max(dp)) 
