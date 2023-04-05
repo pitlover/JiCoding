@@ -2,4 +2,5 @@
  
 ## Algorithm Self-Study
 ### Review-Queue
-codeup:6029, 6030, 6031
+#### codeup:
+[값변환] 진수, 유니코드 : 6029, 6030, 6031, 6042
