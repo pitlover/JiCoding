@@ -134,3 +134,8 @@ def solution(n):
 # ex) ['aaaa', 'aaa', 'aa', 'a', 'b', 'bb', 'bbb'] -> ['a', 'aa', 'aaa', 'aaaa', 'b', 'bb', 'bbb'] -> ['a', 'b', 'aa', 'bb', 'aaa', 'bbb', 'aaaa'] 
 words.sort()  
 words.sort(key = lambda x : len(x))
+arr.sort(key=lambda x:(x[0], x[1])) # x[0] (x좌표)을 정렬하고, x[0] 값이 같다면 x[1] (y좌표)을 기준으로 오름차순 정렬
+
+# 원소 중복 제거
+lst = [[1,2], [1,2], [1]]
+print(list(set(map(tuple, lst))))
