@@ -6,6 +6,7 @@
 2 4
 3 4
 '''
+
 from collections import deque
 
 
