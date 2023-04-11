@@ -1,5 +1,4 @@
 # 프린터
-# Little Help => Success
 
 from collections import deque
 
