@@ -30,9 +30,9 @@ def solution(N, location, priorities):
     return result.index(chr(location + 65)) + 1
 
 
-n = int(input())
+cases = int(input())
 
-for i in range(n):
+for i in range(cases):
     N, location = map(int, input().split())
     priorities = list(map(int, input().split()))
     print(solution(N, location, priorities))
