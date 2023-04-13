@@ -11,7 +11,7 @@ for a in results:
 '''
 
 # Backtracking with DFS
-
+'''
 n, m = map(int, input().split())
 
 s = []
@@ -36,3 +36,22 @@ def dfs():
 
 
 dfs()
+
+'''
+n, m = map(int, input().split())
+arr = [i for i in range(1, n + 1)]
+
+
+def dfs(results):
+    if len(results) == m:
+        print(*results)
+        return
+
+    for i in arr:
+        if i not in results:
+            results.append(i)
+            dfs(results)
+            results.pop()
+
+
+dfs([])
