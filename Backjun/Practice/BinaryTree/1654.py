@@ -13,52 +13,56 @@
 100
 100
 '''
+'''
+4 8
+13
+13
+13
+13
+'''
 import sys
 
 n, k = map(int, input().split())
 
 lines = []
 max_line = 0
+
 for i in range(n):
-    line = int(sys.stdin.readline())
+    line = int(sys.stdin.readline().rstrip())
     lines.append(line)
     if max_line < line:
         max_line = line
 
-lines.sort()
+start, end = 1, max_line
 
 
-def get_n(cut):
-    count = 0
+def get_cnt(value):
+    cnt = 0
     for line in lines:
-        count += (line // cut)
+        cnt += (line // value)
+    return cnt
 
-    return count
 
+if get_cnt(max_line) == k:
+    print(max_line)
+    exit()
+results = []
+result = None
+while start <= end:
+    mid = (start + end) // 2
+    cnt = get_cnt(mid)
+    # print(f"range : {start}-{end} ({mid}), cnt : {cnt}")
+    if cnt == k:
+        result = mid
+        results.append(mid)
 
-def binarysearch(result, low, high):
-    mid = (low + high) // 2
-    tmp_k = get_n(mid)
-
-    # print(f"range : {low}-{high}, mid :{mid}, cut : {tmp_k}, result : {result}")
-
-    if tmp_k == k:
-        print(mid)
-        return
+    if cnt < k:
+        end = mid - 1
     else:
         result = mid
+        start = mid + 1
 
-    if low >= high:
-        print(result)
-        return
-
-    if tmp_k < k:
-        binarysearch(result, low, mid - 1)
-    else:
-        binarysearch(result, mid + 1, high)
-
-
-if get_n(max_line) == k:
-    print(max_line)
-else:
-    binarysearch(None, 1, max_line)
+# print(results)
+if len(results) == 0:
+    results.append(result)
+print(max(results))
