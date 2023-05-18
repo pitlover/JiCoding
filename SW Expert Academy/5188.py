@@ -33,6 +33,7 @@ def sol(matrix, m):
     return matrix[-1][-1]
 
 
+
 for _ in range(n):
     m = int(input())
     matrix = [list(map(int, input().split(" "))) for _ in range(m)]
